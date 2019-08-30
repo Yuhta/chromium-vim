@@ -940,7 +940,7 @@ Command.show = function(search, value, complete) {
     Status.hide();
   }
   this.bar.style.display = 'inline-block';
-  setTimeout(function() {
+  var timerId = setInterval(function() {
     this.input.focus();
     if (complete !== null) {
       this.complete(value);
@@ -957,6 +957,7 @@ Command.show = function(search, value, complete) {
 
     }
     // End temp fix
+    clearInterval(timerId);
 
   }.bind(this), 0);
 };
