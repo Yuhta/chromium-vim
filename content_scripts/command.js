@@ -954,10 +954,10 @@ Command.show = function(search, value, complete) {
       // TODO: figure out why a842dd6 and fix for #527 are necessary
       // document.getSelection().collapseToEnd();
       document.getSelection().modify('move', 'right', 'lineboundary');
+      clearInterval(timerId);
 
     }
     // End temp fix
-    clearInterval(timerId);
 
   }.bind(this), 0);
 };
